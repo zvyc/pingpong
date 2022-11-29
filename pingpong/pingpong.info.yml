@@ -1,13 +1,12 @@
-name: Bootstrap Barrio Subtheme
+name: PingPong
 type: theme
-description: 'Basic structure for a Bootstrap Barrio SubTheme.'
-core: 8.x
+description: 'PingPong subtheme for Barrio'
 core_version_requirement: ^8 || ^9 || ^10
 base theme: bootstrap_barrio
 
 libraries:
-  - bootstrap_barrio_subtheme/bootstrap_cdn
-  - bootstrap_barrio_subtheme/global-styling
+  - pingpong/bootstrap_cdn
+  - pingpong/global-styling
 
 regions:
   top_header: 'Top header'
@@ -34,6 +33,3 @@ regions:
   footer_fifth: 'Footer fifth'
 
 # Information added by Drupal.org packaging script on 2022-08-17
-version: '5.5.6'
-project: 'bootstrap_barrio'
-datestamp: 1660747465
