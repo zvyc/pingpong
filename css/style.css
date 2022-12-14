@@ -2,3 +2,91 @@
  * @file
  * Subtheme specific CSS.
  */
+ 
+@font-face {
+    font-family: RadleySans;
+    src: url(../fonts/RadleySans.ttf);
+}
+
+.row {
+	margin-right: 0; /*Makes the website not scrollale sideways*/
+}
+
+#block-pingpong-main-menu .nav-link {
+	color: white;
+}
+
+ #block-pingpong-main-menu ul {
+ 	flex-direction: row;
+ 	justify-content: center;
+ }
+
+ #navbar-top {
+ 	flex-wrap: nowrap;
+ 	background-color: #2122BB;
+ }
+
+#block-pingpong-account-menu .nav {
+	justify-content: end;
+}
+
+
+.masthead {
+	height: 50vh;
+	min-height: 500px;
+	background-image: url('https://cdn.discordapp.com/attachments/783343189942730762/1052287343261921341/image.jpg');
+	/*background-image: url('https://media.discordapp.net/attachments/783343189942730762/1052328136701902858/btf-banner-3.jpg');*/
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	font-family: RadleySans;
+	/*filter: brightness(50%);*/
+}
+
+.masthead h1 {
+	/*color: white;*/
+	color: #39FF14;
+	font-size: 4rem;
+	text-shadow: 4px 4px 5px black;
+}
+
+.masthead p {
+	color: white;
+	font-size: 2rem;
+}
+ .nav-item {
+ 	padding-left: 1rem;
+ 	padding-right: 1rem;
+ 	font-size: 1.1rem;
+ 	font-weight: 700;
+ 	color: white;
+ }
+
+ #main-wrapper {
+ 	padding-top: 1rem;
+ }
+
+/* Make the dropdown menu items not expand the block region*/
+.navbar-nav .dropdown-menu {
+	position: absolute;
+}
+
+/*.navbar-brand {
+	line-height: 4em;
+	font-size: 2em; 
+	padding-left: 0.5em;
+}*/
+/*
+.region-secondary-menu {
+	display: inline-block;
+}*/
+
+/* Make the logo clickable only on itself */
+section.region-secondary-menu {
+	display: inline-block;
+	padding-left: 2em;
+}
+
+.navbar-brand img {
+	padding-right: 0.5em;
+}
