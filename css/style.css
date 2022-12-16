@@ -3,6 +3,10 @@
  * Subtheme specific CSS.
  */
  
+body {
+	overflow-anchor: none;
+}
+
 @font-face {
     font-family: RadleySans;
     src: url(../fonts/RadleySans.ttf);
@@ -14,16 +18,24 @@
 
 #block-pingpong-main-menu .nav-link {
 	color: white;
+  	white-space: nowrap;
 }
 
  #block-pingpong-main-menu ul {
- 	flex-direction: row;
+ 	flex-flow: row nowrap;
  	justify-content: center;
  }
 
  #navbar-top {
  	flex-wrap: nowrap;
  	background-color: #2122BB;
+ 	border-bottom: 4px solid black;
+ 	max-height: 9rem;
+ 	position: sticky;
+ 	width: 100%;
+ 	z-index: 999;
+ 	top: 0;
+ 	transition: all 0.4s;
  }
 
 #block-pingpong-account-menu .nav {
@@ -40,7 +52,10 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	font-family: RadleySans;
+	/*margin-top: 9rem;*/
 	/*filter: brightness(50%);*/
+	/*margin-top: 4.7rem;*/
+	transition: all 0.4s;
 }
 
 .masthead h1 {
@@ -89,4 +104,15 @@ section.region-secondary-menu {
 
 .navbar-brand img {
 	padding-right: 0.5em;
+	/*width: 40%*/
+	transition: all 0.4s;
+	width: 85%;
+}
+
+.masthead-min {
+	/*margin-top: 4.7rem;*/
+}
+
+.logo-min {
+	width: 40% !important;
 }
