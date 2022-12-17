@@ -35,7 +35,7 @@ body {
  	width: 100%;
  	z-index: 999;
  	top: 0;
- 	transition: all 0.4s;
+ 	transition: all 0.3s;
  }
 
 #block-pingpong-account-menu .nav {
@@ -55,7 +55,7 @@ body {
 	/*margin-top: 9rem;*/
 	/*filter: brightness(50%);*/
 	/*margin-top: 4.7rem;*/
-	transition: all 0.4s;
+	transition: all 0.3s;
 }
 
 .masthead h1 {
@@ -105,8 +105,8 @@ section.region-secondary-menu {
 .navbar-brand img {
 	padding-right: 0.5em;
 	/*width: 40%*/
-	transition: all 0.4s;
-	width: 85%;
+	transition: all 0.3s;
+	width: 70%;
 }
 
 .masthead-min {
@@ -115,4 +115,19 @@ section.region-secondary-menu {
 
 .logo-min {
 	width: 40% !important;
+}
+
+.field__label {
+  font-weight: 700;
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.field__label::after {
+  content: ":";
+}
+
+/*Add some extra margin-right to the label "Slut" so that the label to the right aligns with the above ones*/
+.field--type-datetime:last-of-type .field__label {
+	margin-right: 0.96rem;
 }
