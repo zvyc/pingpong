@@ -4,7 +4,7 @@
  */
  
 body {
-	overflow-anchor: none;
+	overflow-anchor: none; /*Prevents the navbar shrink animation from getting stuck in a loop*/
 }
 
 @font-face {
@@ -30,7 +30,7 @@ body {
  	flex-wrap: nowrap;
  	background-color: #2122BB;
  	border-bottom: 4px solid black;
- 	max-height: 9rem;
+ 	/*max-height: 9rem;*/
  	position: sticky;
  	width: 100%;
  	z-index: 999;
@@ -81,21 +81,6 @@ body {
  	padding-top: 1rem;
  }
 
-/* Make the dropdown menu items not expand the block region*/
-.navbar-nav .dropdown-menu {
-	position: absolute;
-}
-
-/*.navbar-brand {
-	line-height: 4em;
-	font-size: 2em; 
-	padding-left: 0.5em;
-}*/
-/*
-.region-secondary-menu {
-	display: inline-block;
-}*/
-
 /* Make the logo clickable only on itself */
 section.region-secondary-menu {
 	display: inline-block;
@@ -107,6 +92,7 @@ section.region-secondary-menu {
 	/*width: 40%*/
 	transition: all 0.3s;
 	width: 70%;
+	min-width: 5.25rem;
 }
 
 .masthead-min {
@@ -130,4 +116,47 @@ section.region-secondary-menu {
 /*Add some extra margin-right to the label "Slut" so that the label to the right aligns with the above ones*/
 .field--type-datetime:last-of-type .field__label {
 	margin-right: 0.96rem;
+}
+
+.menu-list {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.login-list {
+	margin-left: auto;
+}
+
+
+#offcanvasRight {
+	background-color: #055A8E;
+}
+
+/* Override inline styles, temporary */
+#offcanvasRight .dropdown-menu {
+	position: static !important;
+	transform: none !important;
+}
+
+#offcanvasRight .offcanvas-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 1199px) {
+	#block-pingpong-main-menu ul {
+		flex-flow: column;
+		justify-content: end;
+	}
+
+	.login-list {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.menu-list {
+		margin-right: auto;
+		margin-left: 2rem;
+	}
 }
