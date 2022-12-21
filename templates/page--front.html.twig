@@ -146,13 +146,13 @@
           <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
               <h1 class="fw-bold">Stenungsunds BTF</h1>
-              <p class="fw-normal lead">Bordtennis för alla!</p>
+              <p class="fw-bold lead">Bordtennis för alla!</p>
             </div>
           </div>
         </div>
       </div>
 
-      <nav{{ navbar_attributes }}>
+      {# <nav{{ navbar_attributes }}>
         {% if container_navbar %}
         <div class="container">
         {% endif %}
@@ -174,7 +174,7 @@
         {% if container_navbar %}
         </div>
         {% endif %}
-      </nav>
+      </nav> #}
     {% endblock %}
     </header>
 
@@ -234,7 +234,14 @@
         </aside>
       </div>
     {% endif %}
+
+
     <footer class="site-footer">
+      {{ page.footer_first }}
+      {{ page.footer_second }}
+    </footer>
+
+   {#  <footer class="site-footer">
       {% block footer %}
       <div class="{{ container }}">
         {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
@@ -252,6 +259,10 @@
         {% endif %}
       </div>
       {% endblock %}
-    </footer>
+    </footer> #}
+
+
+
+
   </div>
 </div>

@@ -3,8 +3,12 @@
  * Subtheme specific CSS.
  */
  
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@700&display=swap');
+
+
 body {
 	overflow-anchor: none; /*Prevents the navbar shrink animation from getting stuck in a loop*/
+	font-family: 'Open Sans', sans-serif;
 }
 
 @font-face {
@@ -21,6 +25,12 @@ body {
   	white-space: nowrap;
 }
 
+#block-pingpong-main-menu .nav-link:hover {
+	color: #bbb;
+}
+
+
+
  #block-pingpong-main-menu ul {
  	flex-flow: row nowrap;
  	justify-content: center;
@@ -33,7 +43,7 @@ body {
  	/*max-height: 9rem;*/
  	position: sticky;
  	width: 100%;
- 	z-index: 999;
+ 	z-index: 500;
  	top: 0;
  	transition: all 0.3s;
  }
@@ -44,24 +54,25 @@ body {
 
 
 .masthead {
-	height: 50vh;
+	height: 80vh;
 	min-height: 500px;
 	background-image: url('https://cdn.discordapp.com/attachments/783343189942730762/1052287343261921341/image.jpg');
 	/*background-image: url('https://media.discordapp.net/attachments/783343189942730762/1052328136701902858/btf-banner-3.jpg');*/
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	font-family: RadleySans;
 	/*margin-top: 9rem;*/
 	/*filter: brightness(50%);*/
 	/*margin-top: 4.7rem;*/
 	transition: all 0.3s;
+	border-bottom: 4px solid black; /*maybe change later*/
 }
 
 .masthead h1 {
 	/*color: white;*/
 	color: #39FF14;
 	font-size: 4rem;
+	font-family: RadleySans;
 	text-shadow: 4px 4px 5px black;
 }
 
@@ -95,10 +106,10 @@ section.region-secondary-menu {
 	min-width: 5.25rem;
 }
 
-.masthead-min {
-	/*margin-top: 4.7rem;*/
+/*.masthead-min {
+	margin-top: 2.825rem;
 }
-
+*/
 .logo-min {
 	width: 40% !important;
 }
@@ -130,6 +141,7 @@ section.region-secondary-menu {
 
 #offcanvasRight {
 	background-color: #055A8E;
+	transform: 0.3s ease-in-out;
 }
 
 /* Override inline styles, temporary */
@@ -142,6 +154,57 @@ section.region-secondary-menu {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+}
+
+/* Style for the label inside the offcanvas menu, change later*/
+#offcanvasRightLabel {
+	color: black;
+	font-weight: 700;
+	font-size: 1.4rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+
+/*Footer*/
+.site-footer h2 {
+	text-transform: none;
+	color: #fff;
+	/*border-bottom: 2px solid #555;*/
+	/*border-bottom-color: rgb(85, 85, 85);*/
+	/*border-color: rgba(255, 255, 255, 0.15);*/
+	border: none;
+	font-size: 1.1rem;
+	/*margin-bottom: 0.5rem;*/
+	/*padding-bottom: 0.1rem;*/
+	font-weight: bold;
+}
+
+.site-footer .content {}
+
+.site-footer .block {
+	border: none;
+}
+
+.site-footer {
+	background-color: #055A8E;
+	display: flex;
+	justify-content: space-around;
+	padding-right: 10rem;
+	padding-left: 10rem;
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+.feed-icons {
+	display: none;
+}
+
+
+/* Calendar */
+
+.fc-toolbar.fc-header-toolbar h2 {
+	text-transform: capitalize;
 }
 
 @media screen and (max-width: 1199px) {
@@ -160,3 +223,47 @@ section.region-secondary-menu {
 		margin-left: 2rem;
 	}
 }
+
+/* The banner text gets too big for the screen*/
+@media screen and (max-width: 430px) {
+	.masthead h1 {
+		font-size: 3.5rem;
+	}
+
+	.masthead p {
+		font-size: 1.75rem;
+	}
+}
+
+/* The admin toolbar no longer becomes fixed, adjust the navbar accordingly*/
+/* Also remove the navbar shrinking animation and always use the minified version of the navbar. The animation is laggy and weird on mobiles*/
+@media screen and (max-width: 593px) {
+	#navbar-top {
+		top: 0 !important; /* Override the javascript function*/
+	}
+
+	#navbar-top section {
+		padding-left: 0;
+	}
+
+	.navbar-brand img {
+		width: 40% !important;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.site-footer {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+@media screen and (max-width: 510px) {
+	.site-footer {
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 5rem;
+		padding-right: 0;
+	}
+}
+
