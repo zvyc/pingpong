@@ -5,16 +5,25 @@
  
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@700&display=swap');
 
-
-body {
-	overflow-anchor: none; /*Prevents the navbar shrink animation from getting stuck in a loop*/
-	font-family: 'Open Sans', sans-serif;
-}
-
 @font-face {
     font-family: RadleySans;
     src: url(../fonts/RadleySans.ttf);
 }
+
+html, body {
+	height: 100vh;
+}
+
+body {
+	overflow-anchor: none; /*Prevents the navbar shrink animation from getting stuck in a loop*/
+	font-family: 'Open Sans', sans-serif;
+	/*background-color: #055A8E;*/
+}
+
+#main-wrapper {
+	min-height: 300px;
+}
+
 
 .row {
 	margin-right: 0; /*Makes the website not scrollale sideways*/
@@ -31,22 +40,23 @@ body {
 
 
 
- #block-pingpong-main-menu ul {
+#block-pingpong-main-menu ul {
  	flex-flow: row nowrap;
  	justify-content: center;
- }
+}
 
- #navbar-top {
+#navbar-top {
  	flex-wrap: nowrap;
  	background-color: #2122BB;
- 	border-bottom: 4px solid black;
+ 	/*border-bottom: 4px solid black;*/
+ 	box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
  	/*max-height: 9rem;*/
  	position: sticky;
  	width: 100%;
  	z-index: 500;
  	top: 0;
  	transition: all 0.3s;
- }
+}
 
 #block-pingpong-account-menu .nav {
 	justify-content: end;
@@ -65,7 +75,14 @@ body {
 	/*filter: brightness(50%);*/
 	/*margin-top: 4.7rem;*/
 	transition: all 0.3s;
-	border-bottom: 4px solid black; /*maybe change later*/
+	/*border-bottom: 4px solid black; /*maybe change later*/
+
+
+
+/*	clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+*/
+
+
 }
 
 .masthead h1 {
@@ -73,7 +90,8 @@ body {
 	color: #39FF14;
 	font-size: 4rem;
 	font-family: RadleySans;
-	text-shadow: 4px 4px 5px black;
+	/*text-shadow: 4px 4px 5px black;*/
+	text-shadow: 3px 3px 1px black;
 }
 
 .masthead p {
@@ -140,7 +158,8 @@ section.region-secondary-menu {
 
 
 #offcanvasRight {
-	background-color: #055A8E;
+	/*background-color: #055A8E;*/
+	background-color: #0000A6;
 	transform: 0.3s ease-in-out;
 }
 
@@ -180,8 +199,6 @@ section.region-secondary-menu {
 	font-weight: bold;
 }
 
-.site-footer .content {}
-
 .site-footer .block {
 	border: none;
 }
@@ -198,6 +215,18 @@ section.region-secondary-menu {
 
 .feed-icons {
 	display: none;
+}
+
+.sponsors h2 {
+	text-align: center;
+}
+
+.sponsors > div {
+	display: flex;
+  	align-items: center;
+  	justify-content: space-evenly;
+  	margin: 4rem 0;
+  	gap: 1rem;
 }
 
 
@@ -262,8 +291,8 @@ section.region-secondary-menu {
 	.site-footer {
 		flex-direction: column;
 		justify-content: center;
-		padding-left: 5rem;
-		padding-right: 0;
+		padding-left: 10%;
+		padding-right: 10%;
 	}
 }
 
