@@ -24,7 +24,6 @@ body {
 	min-height: 300px;
 }
 
-
 .row {
 	margin-right: 0; /*Makes the website not scrollale sideways*/
 }
@@ -57,6 +56,25 @@ body {
  	top: 0;
  	transition: all 0.3s;
 }
+
+/* Menu dropdown items styling*/
+.dropdown-item:hover {
+	/*background-color: red;*/
+	background-color: inherit;
+	/*font-weight: 600;*/
+
+    /*text-shadow: 0px 0px 0.01px #018fe2;*/
+}
+
+.dropdown-item a {
+	text-decoration: none;
+}
+
+.dropdown-item a:hover {
+    color: #04a3ff; 
+	transition: .3s;
+}
+
 
 #block-pingpong-account-menu .nav {
 	justify-content: end;
@@ -142,11 +160,6 @@ section.region-secondary-menu {
   content: ":";
 }
 
-/*Add some extra margin-right to the label "Slut" so that the label to the right aligns with the above ones*/
-.field--type-datetime:last-of-type .field__label {
-	margin-right: 0.96rem;
-}
-
 .menu-list {
 	margin-right: auto;
 	margin-left: auto;
@@ -156,7 +169,71 @@ section.region-secondary-menu {
 	margin-left: auto;
 }
 
+/* News */
 
+.news .view-content.row {
+	border-top: 1px solid rgba(0,0,0, 0.2);
+	max-width: 900px;
+	margin: 0 auto;
+	margin-top: 2rem;
+	margin-bottom: 1rem;	
+}
+
+.news .views-row {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid rgba(0,0,0, 0.2);
+}
+
+.news .ds-1col {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-basis: 10rem;
+}
+
+.news h1.title {
+	text-align: center;
+	font-size: calc(1.325rem + .9vw); /* Same size as the other titles on the frontpage */
+}
+
+.news h2 {
+	font-size: 1.5rem;
+	margin-bottom: 0;
+}
+
+.news h2 a {
+	text-decoration: none;
+}
+
+/* Very ugly slector, try to make it better*/
+.news .ds-1col > div:nth-of-type(2) {
+	min-width: 9rem; /* Makes the dates align*/
+}
+
+.all-news-link {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+/* Specific for /nyheter page */
+.news .pagination {
+	justify-content: center;
+}
+
+.path-nyheter h1.title {
+	text-align: center;
+}
+
+.path-nyheter .news {
+	margin-bottom: 4rem;
+}
+
+
+
+/* Sidebar slide in menu styling */
 #offcanvasRight {
 	/*background-color: #055A8E;*/
 	background-color: #0000A6;
@@ -185,7 +262,7 @@ section.region-secondary-menu {
 }
 
 
-/*Footer*/
+/* Footer */
 .site-footer h2 {
 	text-transform: none;
 	color: #fff;
@@ -217,8 +294,35 @@ section.region-secondary-menu {
 	display: none;
 }
 
-.sponsors h2 {
+/* Styling for the intro/sponsors section */
+.card {
+	border: none;
+	max-width: 20rem;
+	background-color: #F5F5F5;
+	box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.07);
+}
+
+.card-body {
+	background-color: #F5F5F5;
+	/*background-color: #004ee0;*/
+	/*background-color: #007bfc;*/
+	/*border-bottom-right-radius: 0.5rem;*/
+	/*border-bottom-left-radius: 0.5rem;*/
+}
+
+.intro > div {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-evenly;
+	gap: 2rem;
+	margin-bottom: 4rem;
+	margin-top: 2rem;
+}
+
+.sponsors h2, .intro h2 {
 	text-align: center;
+	margin-top: 1rem;
 }
 
 .sponsors > div {
@@ -230,10 +334,108 @@ section.region-secondary-menu {
 }
 
 
-/* Calendar */
+
+/* Calendar styling */
 
 .fc-toolbar.fc-header-toolbar h2 {
+	text-align: center;
 	text-transform: capitalize;
+}
+
+/* Prevents the calendar from being too small on mobile*/
+.fc-scroller {
+	min-height: 314.6px;
+}
+
+.fc-today-button {
+	margin-left: 1rem;
+}
+
+.path-kalender #content {
+	padding: 0 15%;
+}
+
+/* Set min-width to the labels so that their content aligns when viewing an single event*/
+.node--type-events .field__label {
+	min-width: 3.2rem;
+}
+
+table {
+	margin: 0;
+}
+
+tr {
+	background-color: transparent;
+}
+
+thead > tr {
+  border-bottom: none;
+}
+
+table tr th {
+  background-color: #004ee0;
+}
+
+.fc-day-header:first-of-type, .fc-axis.fc-widget-header {
+	border-top-left-radius: 0.5rem;
+	border: none;
+}
+
+.fc-day-header:last-of-type {
+	border-top-right-radius: 0.5rem;
+}
+
+.fc-head-container.fc-widget-header, .fc-body > tr > .fc-widget-content, .fc-row.fc-widget-header {
+	border: none;
+}
+
+.fc-slats > div, .fc-week.fc-widget-content {
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+}
+
+.fc-dayGridMonth-view .fc-row:last-of-type .fc-bg {
+	border-bottom: 1px solid #ddd;
+}
+
+.fc-divider + .fc-scroller {
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.fc-day {
+	background-color: #eee;
+}
+
+.fc-day-header {
+	border: none !important;
+}
+
+.fc-day-header span, .fc-day-header a, a.fc-list-heading-alt {
+	text-transform: capitalize;
+}
+
+.fc .fc-row .fc-content-skeleton table, .fc .fc-row .fc-content-skeleton td, .fc .fc-row .fc-mirror-skeleton td {
+  border-color: inherit;
+}
+
+.fc-dayGrid-view .fc-day-number {
+	text-decoration: none;
+	font-weight: 500;
+	padding: 0.25rem;
+}
+
+.fc-event {
+	border: 1px solid #3a87ad;
+}
+
+
+/* Make the site mobile friendly */
+
+@media screen and (max-width: 1200px) {
+	.path-kalender #content {
+		padding: initial;
+	}
 }
 
 @media screen and (max-width: 1199px) {
@@ -253,15 +455,20 @@ section.region-secondary-menu {
 	}
 }
 
-/* The banner text gets too big for the screen*/
-@media screen and (max-width: 430px) {
-	.masthead h1 {
-		font-size: 3.5rem;
+@media screen and (max-width: 1000px) {
+	.site-footer {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.fc-toolbar h2 {
+		font-size: 1.5em;
 	}
 
-	.masthead p {
-		font-size: 1.75rem;
-	}
+	.fc-today-button {
+		margin-top: 0.25rem;
 }
 
 /* The admin toolbar no longer becomes fixed, adjust the navbar accordingly*/
@@ -280,19 +487,49 @@ section.region-secondary-menu {
 	}
 }
 
-@media screen and (max-width: 1000px) {
-	.site-footer {
+@media screen and (max-width: 576px) {
+	.path-kalender #main {
+		padding-left: 1.5rem;
 		padding-right: 0;
-		padding-left: 0;
 	}
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 550px) {
 	.site-footer {
 		flex-direction: column;
 		justify-content: center;
 		padding-left: 10%;
 		padding-right: 10%;
 	}
+
+	/* Shrink the size of the news titles */
+	.ds-1col h2 {
+		font-size: 1.2rem;
+		margin-bottom: 0;
+	}
+
+	/* Adjust calendar navigation buttons */
+	.fc-right .fc-button-group {
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.fc-right .fc-button-group .fc-button {
+		border-radius: 0.25rem;
+	}
+
+	.fc-today-button {
+		display: block;
+	}
 }
 
+/* The banner text gets too big for the screen*/
+@media screen and (max-width: 430px) {
+	.masthead h1 {
+		font-size: 3.5rem;
+	}
+
+	.masthead p {
+		font-size: 1.75rem;
+	}
+}
