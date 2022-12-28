@@ -3,7 +3,7 @@
  * Subtheme specific CSS.
  */
  
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
 @font-face {
     font-family: RadleySans;
@@ -22,6 +22,7 @@ body {
 
 #main-wrapper {
 	min-height: 300px;
+	padding-top: 1rem;
 }
 
 .row {
@@ -47,9 +48,7 @@ body {
 #navbar-top {
  	flex-wrap: nowrap;
  	background-color: #2122BB;
- 	/*border-bottom: 4px solid black;*/
  	box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
- 	/*max-height: 9rem;*/
  	position: sticky;
  	width: 100%;
  	z-index: 500;
@@ -57,13 +56,9 @@ body {
  	transition: all 0.3s;
 }
 
-/* Menu dropdown items styling*/
-.dropdown-item:hover {
-	/*background-color: red;*/
+/* Menu dropdown items styling */
+.dropdown-item:hover, .dropdown-item.active {
 	background-color: inherit;
-	/*font-weight: 600;*/
-
-    /*text-shadow: 0px 0px 0.01px #018fe2;*/
 }
 
 .dropdown-item a {
@@ -82,39 +77,29 @@ body {
 
 
 .masthead {
-	height: 80vh;
+	height: 85vh;
 	min-height: 500px;
-	background-image: url('https://cdn.discordapp.com/attachments/783343189942730762/1052287343261921341/image.jpg');
-	/*background-image: url('https://media.discordapp.net/attachments/783343189942730762/1052328136701902858/btf-banner-3.jpg');*/
+	background-image: url('/themes/pingpong/images/banner.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	/*margin-top: 9rem;*/
-	/*filter: brightness(50%);*/
-	/*margin-top: 4.7rem;*/
 	transition: all 0.3s;
-	/*border-bottom: 4px solid black; /*maybe change later*/
-
-
-
-/*	clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
-*/
-
-
 }
 
 .masthead h1 {
 	/*color: white;*/
-	color: #39FF14;
-	font-size: 4rem;
+	color: #fff;
+	font-size: 5rem;
 	font-family: RadleySans;
 	/*text-shadow: 4px 4px 5px black;*/
-	text-shadow: 3px 3px 1px black;
+	text-shadow: 4px 4px 1px black;
+	margin-bottom: 0;
 }
-
+	
 .masthead p {
-	color: white;
-	font-size: 2rem;
+	color: #004EE0;
+	text-shadow: 2px 2px 4px black;
+	font-size: 2.25rem;
 }
  .nav-item {
  	padding-left: 1rem;
@@ -122,10 +107,6 @@ body {
  	font-size: 1.1rem;
  	font-weight: 700;
  	color: white;
- }
-
- #main-wrapper {
- 	padding-top: 1rem;
  }
 
 /* Make the logo clickable only on itself */
@@ -142,10 +123,7 @@ section.region-secondary-menu {
 	min-width: 5.25rem;
 }
 
-/*.masthead-min {
-	margin-top: 2.825rem;
-}
-*/
+/* Navbar shrink class that gets added to the logo on scroll by javascript */
 .logo-min {
 	width: 40% !important;
 }
@@ -211,11 +189,11 @@ section.region-secondary-menu {
 	min-width: 9rem; /* Makes the dates align*/
 }
 
-.all-news-link {
+.more-link {
 	display: block;
 	text-decoration: none;
 	text-align: center;
-	margin-bottom: 3rem;
+	margin-bottom: 4rem;
 }
 
 /* Specific for /nyheter page */
@@ -266,13 +244,8 @@ section.region-secondary-menu {
 .site-footer h2 {
 	text-transform: none;
 	color: #fff;
-	/*border-bottom: 2px solid #555;*/
-	/*border-bottom-color: rgb(85, 85, 85);*/
-	/*border-color: rgba(255, 255, 255, 0.15);*/
 	border: none;
 	font-size: 1.1rem;
-	/*margin-bottom: 0.5rem;*/
-	/*padding-bottom: 0.1rem;*/
 	font-weight: bold;
 }
 
@@ -284,17 +257,19 @@ section.region-secondary-menu {
 	background-color: #055A8E;
 	display: flex;
 	justify-content: space-around;
+	margin-top: 2rem;
 	padding-right: 10rem;
 	padding-left: 10rem;
 	font-family: 'Open Sans', sans-serif;
 }
 
 
-.feed-icons {
+/* Remove feed icons and unnecessary info when you comment */
+.feed-icons, #edit-comment-body-0-format {
 	display: none;
 }
 
-/* Styling for the intro/sponsors section */
+/* Styling for the intro/sponsors/framsida-kalender section */
 .card {
 	border: none;
 	max-width: 20rem;
@@ -304,10 +279,6 @@ section.region-secondary-menu {
 
 .card-body {
 	background-color: #F5F5F5;
-	/*background-color: #004ee0;*/
-	/*background-color: #007bfc;*/
-	/*border-bottom-right-radius: 0.5rem;*/
-	/*border-bottom-left-radius: 0.5rem;*/
 }
 
 .intro > div {
@@ -320,7 +291,7 @@ section.region-secondary-menu {
 	margin-top: 2rem;
 }
 
-.sponsors h2, .intro h2 {
+.sponsors h2, .intro h2, .featured-bottom h2 {
 	text-align: center;
 	margin-top: 1rem;
 }
@@ -333,6 +304,28 @@ section.region-secondary-menu {
   	gap: 1rem;
 }
 
+.framsida-kalender .fc-toolbar {
+	display: none;
+}
+
+.framsida-kalender {
+	margin-top: 1.5rem;
+	max-width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.framsida-kalender .fc-scroller {
+	height: initial !important;
+}
+
+.framsida-kalender .fc-list-heading-alt {
+	text-transform: capitalize;
+}
+
+.framsida-kalender .fc-view {
+	border: none;
+}
 
 
 /* Calendar styling */
@@ -369,11 +362,11 @@ tr {
 }
 
 thead > tr {
-  border-bottom: none;
+	border-bottom: none;
 }
 
 table tr th {
-  background-color: #004ee0;
+	background-color: #004ee0;
 }
 
 .fc-day-header:first-of-type, .fc-axis.fc-widget-header {
@@ -430,6 +423,20 @@ table tr th {
 }
 
 
+/* Image gallery styling */
+.path-bilder .views-view-grid {
+	margin-bottom: 4rem;
+}
+
+.path-bilder h1.title {
+	margin-bottom: 2rem;
+}
+
+.image-style-arkiv-bilder {
+	box-shadow: 2px 2px 4px black;
+}
+
+
 /* Make the site mobile friendly */
 
 @media screen and (max-width: 1200px) {
@@ -469,10 +476,20 @@ table tr th {
 
 	.fc-today-button {
 		margin-top: 0.25rem;
+	}
+
+	.masthead h1 {
+		font-size: 4rem;
+		white-space: nowrap;
+	}
+
+	.masthead p {
+		font-style: 2rem;
+	}
 }
 
-/* The admin toolbar no longer becomes fixed, adjust the navbar accordingly*/
-/* Also remove the navbar shrinking animation and always use the minified version of the navbar. The animation is laggy and weird on mobiles*/
+/* The admin toolbar no longer becomes fixed, adjust the navbar accordingly */
+/* Also remove the navbar shrinking animation and always use the minified version of the navbar. The animation is laggy and weird on mobiles */
 @media screen and (max-width: 593px) {
 	#navbar-top {
 		top: 0 !important; /* Override the javascript function*/
@@ -520,6 +537,10 @@ table tr th {
 
 	.fc-today-button {
 		display: block;
+	}
+
+	.masthead h1 {
+		white-space: normal;
 	}
 }
 
