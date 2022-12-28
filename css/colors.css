@@ -2,8 +2,6 @@
 
 body {
   color: #3b3b3b;
-  /*background: #055A8E;*/
-  /*background-color: #0000A6;*/
 }
 
 #page,
@@ -23,8 +21,6 @@ body {
 }
 
 #navbar-top {
-  /*background-color: #055a8e;*/
-  /*background-color: #00008B;*/
   background-color: #0000A6;
 }
 
@@ -75,8 +71,6 @@ a:active,
 }
 
 .site-footer {
-  /*background: #292929;*/
-  /*background: #055A8E;*/
   background: #0000A6;
 }
 

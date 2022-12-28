@@ -1,8 +1,3 @@
-/**
- * @file
- * Subtheme specific CSS.
- */
- 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
 @font-face {
@@ -17,7 +12,12 @@ html, body {
 body {
 	overflow-anchor: none; /*Prevents the navbar shrink animation from getting stuck in a loop*/
 	font-family: 'Open Sans', sans-serif;
-	/*background-color: #055A8E;*/
+}
+
+/* Makes the background blue underneath the footer if zommed out or on big screen */
+.dialog-off-canvas-main-canvas {
+	height: 100%;
+	background-color: #0000A6;
 }
 
 #main-wrapper {
@@ -29,6 +29,7 @@ body {
 	margin-right: 0; /*Makes the website not scrollale sideways*/
 }
 
+/* Navbar styling */
 #block-pingpong-main-menu .nav-link {
 	color: white;
   	white-space: nowrap;
@@ -37,8 +38,6 @@ body {
 #block-pingpong-main-menu .nav-link:hover {
 	color: #bbb;
 }
-
-
 
 #block-pingpong-main-menu ul {
  	flex-flow: row nowrap;
@@ -75,8 +74,8 @@ body {
 	justify-content: end;
 }
 
-
-.masthead {
+/* Frontpage banner styling */
+.banner {
 	height: 85vh;
 	min-height: 500px;
 	background-image: url('/themes/pingpong/images/banner.jpg');
@@ -86,22 +85,21 @@ body {
 	transition: all 0.3s;
 }
 
-.masthead h1 {
-	/*color: white;*/
+.banner h1 {
 	color: #fff;
 	font-size: 5rem;
 	font-family: RadleySans;
-	/*text-shadow: 4px 4px 5px black;*/
 	text-shadow: 4px 4px 1px black;
 	margin-bottom: 0;
 }
 	
-.masthead p {
+.banner p {
 	color: #004EE0;
 	text-shadow: 2px 2px 4px black;
 	font-size: 2.25rem;
 }
- .nav-item {
+
+.nav-item {
  	padding-left: 1rem;
  	padding-right: 1rem;
  	font-size: 1.1rem;
@@ -117,7 +115,6 @@ section.region-secondary-menu {
 
 .navbar-brand img {
 	padding-right: 0.5em;
-	/*width: 40%*/
 	transition: all 0.3s;
 	width: 70%;
 	min-width: 5.25rem;
@@ -147,8 +144,7 @@ section.region-secondary-menu {
 	margin-left: auto;
 }
 
-/* News */
-
+/* News view styling */
 .news .view-content.row {
 	border-top: 1px solid rgba(0,0,0, 0.2);
 	max-width: 900px;
@@ -184,9 +180,9 @@ section.region-secondary-menu {
 	text-decoration: none;
 }
 
-/* Very ugly slector, try to make it better*/
+/* Makes the dates of different lengths align in the news view*/
 .news .ds-1col > div:nth-of-type(2) {
-	min-width: 9rem; /* Makes the dates align*/
+	min-width: 9rem;
 }
 
 .more-link {
@@ -213,7 +209,6 @@ section.region-secondary-menu {
 
 /* Sidebar slide in menu styling */
 #offcanvasRight {
-	/*background-color: #055A8E;*/
 	background-color: #0000A6;
 	transform: 0.3s ease-in-out;
 }
@@ -230,7 +225,7 @@ section.region-secondary-menu {
 	justify-content: space-between;
 }
 
-/* Style for the label inside the offcanvas menu, change later*/
+/* Style for the label inside the offcanvas menu */
 #offcanvasRightLabel {
 	color: black;
 	font-weight: 700;
@@ -240,7 +235,7 @@ section.region-secondary-menu {
 }
 
 
-/* Footer */
+/* Footer styling */
 .site-footer h2 {
 	text-transform: none;
 	color: #fff;
@@ -264,7 +259,7 @@ section.region-secondary-menu {
 }
 
 
-/* Remove feed icons and unnecessary info when you comment */
+/* Remove feed icons, and unnecessary info when you comment */
 .feed-icons, #edit-comment-body-0-format {
 	display: none;
 }
@@ -329,7 +324,6 @@ section.region-secondary-menu {
 
 
 /* Calendar styling */
-
 .fc-toolbar.fc-header-toolbar h2 {
 	text-align: center;
 	text-transform: capitalize;
@@ -432,13 +426,20 @@ table tr th {
 	margin-bottom: 2rem;
 }
 
+.path-bilder .views-row {
+	margin-bottom: 2rem;
+}
+
 .image-style-arkiv-bilder {
 	box-shadow: 2px 2px 4px black;
 }
 
+.picture_view img {
+	width: 100% !important;
+	height: 100% !important;
+}
 
-/* Make the site mobile friendly */
-
+/* Make the site responsive and mobile friendly */
 @media screen and (max-width: 1200px) {
 	.path-kalender #content {
 		padding: initial;
@@ -478,18 +479,18 @@ table tr th {
 		margin-top: 0.25rem;
 	}
 
-	.masthead h1 {
+	.banner h1 {
 		font-size: 4rem;
 		white-space: nowrap;
 	}
 
-	.masthead p {
+	.banner p {
 		font-style: 2rem;
 	}
 }
 
-/* The admin toolbar no longer becomes fixed, adjust the navbar accordingly */
-/* Also remove the navbar shrinking animation and always use the minified version of the navbar. The animation is laggy and weird on mobiles */
+/* The admin toolbar no longer becomes fixed, adjust the navbar position accordingly */
+/* Also remove the navbar shrinking animation and always use the minified version of the navbar. The animation gets laggy on mobiles */
 @media screen and (max-width: 593px) {
 	#navbar-top {
 		top: 0 !important; /* Override the javascript function*/
@@ -539,18 +540,18 @@ table tr th {
 		display: block;
 	}
 
-	.masthead h1 {
+	.banner h1 {
 		white-space: normal;
 	}
 }
 
 /* The banner text gets too big for the screen*/
 @media screen and (max-width: 430px) {
-	.masthead h1 {
+	.banner h1 {
 		font-size: 3.5rem;
 	}
 
-	.masthead p {
+	.banner p {
 		font-size: 1.75rem;
 	}
 }

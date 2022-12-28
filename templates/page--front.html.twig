@@ -1,5 +1,3 @@
-{# {% extends "@bootstrap_barrio/layout/page.html.twig" %} #}
-
 {#
 /**
  * @file
@@ -113,8 +111,7 @@
     {# Image Banner #}
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
     {% block head %}
-
-      <div class="masthead">
+      <div class="banner">
         <div class="container h-100">
           <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
@@ -124,10 +121,8 @@
           </div>
         </div>
       </div>
-
     {% endblock %}
     </header>
-
 
     {% if page.highlighted %}
       <div class="highlighted">
@@ -221,7 +216,7 @@
           <h2>Våra Sponsorer</h2>
           <div>
 
-            {# Sydsport #}
+            {# Sydsport, sponsor 1 #}
             <a href="https://www.sydsport.com/klubbshopen/stenungsund/">
               <svg
                  width="100%"
@@ -332,7 +327,7 @@
               </svg>
             </a>
 
-            {# Stiga #}
+            {# Stiga, sponsor 2 #}
             <a href="https://www.stigasports.com/sv/category/table-tennis">
               <svg
                  width="100%"
@@ -412,31 +407,10 @@
       </div>
     {% endif %}
 
-
     <footer class="site-footer">
       {{ page.footer_first }}
       {{ page.footer_second }}
     </footer>
-
-   {#  <footer class="site-footer">
-      {% block footer %}
-      <div class="{{ container }}">
-        {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-           <div class="site-footer__top clearfix">
-             {{ page.footer_first }}
-             {{ page.footer_second }}
-             {{ page.footer_third }}
-             {{ page.footer_fourth }}
-           </div>
-        {% endif %}
-        {% if page.footer_fifth %}
-           <div class="site-footer__bottom">
-             {{ page.footer_fifth }}
-           </div>
-        {% endif %}
-      </div>
-      {% endblock %}
-    </footer> #}
 
   </div>
 </div>
